@@ -221,17 +221,44 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
   Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "characters" le stringhe corrispondenti a personaggi con lo stesso nome.
   Una volta fatto crea un console.log per controllare la proprietà length di "characters" prima e dopo l'operazione.
 */
+console.log(femaleCharacters);
 
-for (let i = 0; i < characters.length; i++) {
-  if (
-    characters[i] === femaleCharacters[0].name ||
-    characters[i] === femaleCharacters[1].name
-  ) {
-    characters.splice(i, 1);
+console.log(
+  characters.length,
+  "lunghezza array character PRIMA di aver eliminato i personaggi femminili"
+);
+
+for (let j = 0; j < femaleCharacters.length; j++) {
+  for (let i = 0; i < characters.length; i++) {
+    if (femaleCharacters[j].name === characters[i]) {
+      characters.splice(i, 1);
+    }
   }
 }
 
-console.log(characters.length, "lunghezza array characters");
+// for (let i = 0; i < characters.length; i++) {
+//   for (let j = 0; j < femaleCharacters.length; j++) {
+//     if (characters[i] === femaleCharacters[j].name) {
+//       characters.splice(i, 1);
+//       console.log("ciao");
+//     } else {
+//     }
+//   }
+// }
+
+// for (let i = 0; i < characters.length; i++) {
+//   if (
+//     characters[i] === femaleCharacters[0].name ||
+//     characters[i] === femaleCharacters[1].name
+//   ) {
+//     characters.splice(i, 1);
+//   }
+// }
+
+console.log(
+  characters.length,
+  "lunghezza array characters DOPO aver eliminato i personaggi femminili"
+);
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
